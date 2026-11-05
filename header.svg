@@ -4,6 +4,11 @@
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
       <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" />
     </pattern>
+
+    <!-- Soft blur to make the shape look like water -->
+    <filter id="water-blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12" />
+    </filter>
   </defs>
 
   <!-- Dark Background -->
@@ -12,6 +17,25 @@
   <!-- The Grid Overlay -->
   <rect width="800" height="200" fill="url(#grid)" />
 
-  <!-- Your Text (Completely Static) -->
+  <!-- The Black Water Blob (Placed behind the text) -->
+  <g filter="url(#water-blur)">
+    <path d="M 400 50 C 480 50 520 100 480 150 C 400 180 320 150 300 100 C 280 50 320 50 400 50 Z" fill="#000000" opacity="1">
+      
+      <!-- Morphing shape to make it look unshaped/liquid -->
+      <animate attributeName="d" 
+        values="M 400 50 C 480 50 520 100 480 150 C 400 180 320 150 300 100 C 280 50 320 50 400 50 Z;
+                M 400 50 C 520 20 550 120 460 160 C 360 180 280 130 280 80 C 280 30 320 70 400 50 Z;
+                M 400 50 C 460 70 510 80 480 140 C 420 180 340 130 300 110 C 260 70 350 30 400 50 Z;
+                M 400 50 C 480 50 520 100 480 150 C 400 180 320 150 300 100 C 280 50 320 50 400 50 Z" 
+        dur="8s" repeatCount="indefinite" />
+      
+      <!-- Random wandering movement (kept safely inside the 800x200 box) -->
+      <animateTransform attributeName="transform" type="translate" 
+        values="0,0; 140,20; -100,-30; 160,10; -40,-15; 0,0" 
+        dur="12s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <!-- Your Text (Static, on top) -->
   <text x="400" y="115" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="900" font-size="55" fill="#FFFFFF" text-anchor="middle">Hi 👋, I'm Bertrand</text>
 </svg>
