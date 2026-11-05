@@ -1,68 +1,7 @@
 <div align="center">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="100%">
-    <defs>
-      <!-- Vibrant Gradients for the transparent boxes -->
-      <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#FF007F" />
-        <stop offset="100%" stop-color="#FFB100" />
-      </linearGradient>
-      <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#00F0FF" />
-        <stop offset="100%" stop-color="#0055FF" />
-      </linearGradient>
-      <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#39FF14" />
-        <stop offset="100%" stop-color="#00FFAA" />
-      </linearGradient>
-
-      <!-- Glow effect for the boxes -->
-      <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-        <feGaussianBlur stdDeviation="4" result="blur" />
-        <feComposite in="SourceGraphic" in2="blur" operator="over" />
-      </filter>
-
-      <!-- The Mask that reveals the text -->
-      <mask id="revealMask">
-        <rect width="100%" height="100%" fill="black" />
-        <g transform="skewX(-25)">
-          <rect x="-300" y="-20" width="100" height="240" fill="white">
-            <animate attributeName="x" from="-300" to="1000" dur="4s" repeatCount="indefinite" />
-          </rect>
-          <rect x="-300" y="-20" width="200" height="240" fill="white">
-            <animate attributeName="x" from="-300" to="1000" dur="4s" repeatCount="indefinite" begin="0.15s" />
-          </rect>
-          <rect x="-300" y="-20" width="80" height="240" fill="white">
-            <animate attributeName="x" from="-300" to="1000" dur="4s" repeatCount="indefinite" begin="0.3s" />
-          </rect>
-        </g>
-      </mask>
-    </defs>
-
-    <!-- Dark Background -->
-    <rect width="800" height="200" fill="#0D1117" />
-
-    <!-- Dimmed Base Text (shows when boxes are not passing) -->
-    <text x="400" y="115" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="900" font-size="60" fill="#FFFFFF" fill-opacity="0.1" text-anchor="middle">Hi 👋, I'm Bertrand</text>
-
-    <!-- Bright Revealed Text (only shows inside the mask) -->
-    <text x="400" y="115" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="900" font-size="60" fill="#FFFFFF" text-anchor="middle" mask="url(#revealMask)">Hi 👋, I'm Bertrand</text>
-
-    <!-- The Oblique Transparent Colorful Boxes -->
-    <g transform="skewX(-25)" filter="url(#glow)">
-      <!-- Box 1 -->
-      <rect x="-300" y="-20" width="100" height="240" fill="transparent" stroke="url(#grad1)" stroke-width="4" rx="8">
-        <animate attributeName="x" from="-300" to="1000" dur="4s" repeatCount="indefinite" />
-      </rect>
-      <!-- Box 2 -->
-      <rect x="-300" y="-20" width="200" height="240" fill="transparent" stroke="url(#grad2)" stroke-width="4" rx="8">
-        <animate attributeName="x" from="-300" to="1000" dur="4s" repeatCount="indefinite" begin="0.15s" />
-      </rect>
-      <!-- Box 3 -->
-      <rect x="-300" y="-20" width="80" height="240" fill="transparent" stroke="url(#grad3)" stroke-width="4" rx="8">
-        <animate attributeName="x" from="-300" to="1000" dur="4s" repeatCount="indefinite" begin="0.3s" />
-      </rect>
-    </g>
-  </svg>
+  <img src="header.svg" alt="Animated Header" width="100%" />
+  
+  <br><br>
 
   <a href="https://git.io/typing-svg">
     <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=22&pause=1000&color=39FF14&center=true&vCenter=true&width=600&lines=Full-Stack+Web+Developer;Ready+for+a+new+project;Building+Menos+🚀" alt="Typing SVG" />
@@ -126,12 +65,16 @@
   <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" />
   <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" />
 
+  <br><br>
+
   **Backend & Databases** <br>
   <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" />
   <img src="https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=firebase&logoColor=white" />
   <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" />
   <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" />
   
+  <br><br>
+
   **Other Tools** <br>
   <img src="https://img.shields.io/badge/Unity-100000?style=for-the-badge&logo=unity&logoColor=white" />
   <img src="https://img.shields.io/badge/blender-%23F5792A.svg?style=for-the-badge&logo=blender&logoColor=white" />
