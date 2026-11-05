@@ -5,38 +5,22 @@
       <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" />
     </pattern>
 
-    <!-- Colorful Gradients for the Boxes -->
-    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FF007F" />
-      <stop offset="100%" stop-color="#FFB100" />
-    </linearGradient>
-    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00F0FF" />
-      <stop offset="100%" stop-color="#0055FF" />
-    </linearGradient>
-    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#39FF14" />
-      <stop offset="100%" stop-color="#00FFAA" />
-    </linearGradient>
-
-    <!-- Glow Effect -->
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="4" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
-    </filter>
-
     <!-- The Sweeping Animation Mask -->
     <mask id="revealMask">
       <rect width="100%" height="100%" fill="black" />
       <g transform="skewX(-25)">
-        <rect x="-300" y="-20" width="100" height="240" fill="white">
-          <animate attributeName="x" from="-300" to="1000" dur="4s" repeatCount="indefinite" />
+        <!-- The small boxes that create the reveal mask -->
+        <rect x="-300" y="-20" width="40" height="240" fill="white">
+          <animate attributeName="x" from="-300" to="1000" dur="4s" repeatCount="indefinite" begin="0s" />
         </rect>
-        <rect x="-300" y="-20" width="200" height="240" fill="white">
+        <rect x="-300" y="-20" width="40" height="240" fill="white">
           <animate attributeName="x" from="-300" to="1000" dur="4s" repeatCount="indefinite" begin="0.15s" />
         </rect>
-        <rect x="-300" y="-20" width="80" height="240" fill="white">
+        <rect x="-300" y="-20" width="40" height="240" fill="white">
           <animate attributeName="x" from="-300" to="1000" dur="4s" repeatCount="indefinite" begin="0.3s" />
+        </rect>
+        <rect x="-300" y="-20" width="40" height="240" fill="white">
+          <animate attributeName="x" from="-300" to="1000" dur="4s" repeatCount="indefinite" begin="0.45s" />
         </rect>
       </g>
     </mask>
@@ -48,37 +32,36 @@
   <!-- Apply the Grid Pattern -->
   <rect width="800" height="200" fill="url(#grid)" />
 
-  <!-- === STATIC COLORFUL BOXES IN THE CORNERS === -->
-  <g transform="skewX(-20)" filter="url(#glow)">
-    <!-- Top Left -->
-    <rect x="30" y="20" width="60" height="60" fill="transparent" stroke="url(#grad1)" stroke-width="3" rx="4" />
-    <!-- Top Right -->
-    <rect x="730" y="20" width="60" height="60" fill="transparent" stroke="url(#grad2)" stroke-width="3" rx="4" />
-    <!-- Bottom Left -->
-    <rect x="30" y="120" width="60" height="60" fill="transparent" stroke="url(#grad3)" stroke-width="3" rx="4" />
-    <!-- Bottom Right -->
-    <rect x="730" y="120" width="60" height="60" fill="transparent" stroke="url(#grad1)" stroke-width="3" rx="4" />
-  </g>
-
-  <!-- Dimmed Base Text (Visible before the boxes sweep) -->
-  <text x="400" y="115" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="900" font-size="55" fill="#FFFFFF" fill-opacity="0.1" text-anchor="middle">Hi 👋, I'm Bertrand</text>
+  <!-- Dimmed Base Text -->
+  <text x="400" y="115" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="900" font-size="55" fill="#FFFFFF" fill-opacity="0.15" text-anchor="middle">Hi 👋, I'm Bertrand</text>
 
   <!-- Bright Revealed Text (Only visible when the sweeping boxes pass over) -->
   <text x="400" y="115" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="900" font-size="55" fill="#FFFFFF" text-anchor="middle" mask="url(#revealMask)">Hi 👋, I'm Bertrand</text>
 
-  <!-- === SWEEPING COLORFUL BOXES (Over the text) === -->
-  <g transform="skewX(-25)" filter="url(#glow)">
-    <!-- Sweep 1 -->
-    <rect x="-300" y="-20" width="100" height="240" fill="transparent" stroke="url(#grad1)" stroke-width="4" rx="8">
-      <animate attributeName="x" from="-300" to="1000" dur="4s" repeatCount="indefinite" />
+  <!-- === SWEEPING GRAY BOXES === -->
+  <g transform="skewX(-25)">
+    <!-- Box 1 -->
+    <rect x="-300" y="-20" width="40" height="240" fill="transparent" stroke="#8B949E" stroke-width="1.5" rx="2" opacity="0">
+      <animate attributeName="x" from="-300" to="1000" dur="4s" repeatCount="indefinite" begin="0s" />
+      <animate attributeName="opacity" values="0; 0.6; 0.6; 0" keyTimes="0; 0.1; 0.9; 1" dur="4s" repeatCount="indefinite" begin="0s" />
     </rect>
-    <!-- Sweep 2 -->
-    <rect x="-300" y="-20" width="200" height="240" fill="transparent" stroke="url(#grad2)" stroke-width="4" rx="8">
+    
+    <!-- Box 2 -->
+    <rect x="-300" y="-20" width="40" height="240" fill="transparent" stroke="#8B949E" stroke-width="1.5" rx="2" opacity="0">
       <animate attributeName="x" from="-300" to="1000" dur="4s" repeatCount="indefinite" begin="0.15s" />
+      <animate attributeName="opacity" values="0; 0.6; 0.6; 0" keyTimes="0; 0.1; 0.9; 1" dur="4s" repeatCount="indefinite" begin="0.15s" />
     </rect>
-    <!-- Sweep 3 -->
-    <rect x="-300" y="-20" width="80" height="240" fill="transparent" stroke="url(#grad3)" stroke-width="4" rx="8">
+
+    <!-- Box 3 -->
+    <rect x="-300" y="-20" width="40" height="240" fill="transparent" stroke="#8B949E" stroke-width="1.5" rx="2" opacity="0">
       <animate attributeName="x" from="-300" to="1000" dur="4s" repeatCount="indefinite" begin="0.3s" />
+      <animate attributeName="opacity" values="0; 0.6; 0.6; 0" keyTimes="0; 0.1; 0.9; 1" dur="4s" repeatCount="indefinite" begin="0.3s" />
+    </rect>
+
+    <!-- Box 4 -->
+    <rect x="-300" y="-20" width="40" height="240" fill="transparent" stroke="#8B949E" stroke-width="1.5" rx="2" opacity="0">
+      <animate attributeName="x" from="-300" to="1000" dur="4s" repeatCount="indefinite" begin="0.45s" />
+      <animate attributeName="opacity" values="0; 0.6; 0.6; 0" keyTimes="0; 0.1; 0.9; 1" dur="4s" repeatCount="indefinite" begin="0.45s" />
     </rect>
   </g>
 </svg>
